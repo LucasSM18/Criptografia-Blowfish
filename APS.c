@@ -8,7 +8,7 @@
 int main(int argc, char *argv[]) {
 	
 	
-	char Cr, M, Arq;
+    char Cr, M, Arq;
     int result;
     FILE *fp;
     	
