@@ -11,7 +11,6 @@ int main(int argc, char *argv[]) {
 	
     char Cr, M, Arq;
     int result;
-    BLOWFISH_CTX ctx;
     FILE *fp;
     	
 	printf("Digite se voce quer criptografar (C) ou descriptografar (D) uma mensagem:");
@@ -21,12 +20,7 @@ int main(int argc, char *argv[]) {
 		
 		printf("\nDigite aqui a mensagem que deseja criptografar:\n\n");
 		scanf("%S", &M);
-	
-		Blowfish_Init (&ctx, (unsigned char*)"TESTKEY", 7);
-                Blowfish_Encrypt(&M);
-		
-		printf("%08lX %08lX\n", M);
-		
+			
 	}else if((Cr = "D") || (Cr = "d")){
 	
 		printf("\nDigite aqui o nome do arquivo em bloco de notas que possui a mensagem criptografada:\n\n");
