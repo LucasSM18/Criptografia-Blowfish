@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "blowfish.h"
 
 // Testando Commits
 
@@ -10,6 +11,7 @@ int main(int argc, char *argv[]) {
 	
     char Cr, M, Arq;
     int result;
+    BLOWFISH_CTX ctx;
     FILE *fp;
     	
 	printf("Digite se voce quer criptografar (C) ou descriptografar (D) uma mensagem:");
@@ -19,6 +21,11 @@ int main(int argc, char *argv[]) {
 		
 		printf("\nDigite aqui a mensagem que deseja criptografar:\n\n");
 		scanf("%S", &M);
+	
+		Blowfish_Init (&ctx, (unsigned char*)"TESTKEY", 7);
+                Blowfish_Encrypt(&M);
+		
+		printf("%08lX %08lX\n", M);
 		
 	}else if((Cr = "D") || (Cr = "d")){
 	
